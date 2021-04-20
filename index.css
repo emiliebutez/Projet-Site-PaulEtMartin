@@ -1,0 +1,260 @@
+.presentation {
+  vertical-align: middle;
+}
+
+div.backgroundImage {
+  background-image: url(res/images/mountains-6029596_1920.jpg);
+  background-size: cover;
+}
+
+.element {
+  min-height: calc(max(70vh, 600px));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1em;
+}
+
+.element:nth-child(odd) {
+  background-color: white !important;
+  -webkit-box-shadow: 0 0 16px #00000033;
+          box-shadow: 0 0 16px #00000033;
+  z-index: 1;
+}
+
+.element:nth-child(even) {
+  background-color: #EEEEEE;
+}
+
+.element .content {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100;
+}
+
+.presentation-text {
+  color: #ffffff;
+  text-shadow: 1px 1px 32px #00000066;
+  font-size: xx-large;
+  font-weight: 300;
+  margin: 1em;
+}
+
+.presentation-text strong {
+  font-weight: bold !important;
+  color: #ffffff !important;
+}
+
+#slider {
+  max-height: 100%;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#slider #slider-element {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+#slider:hover :is(#precedent, #suivant) {
+  opacity: 1;
+}
+
+#precedent, #suivant {
+  cursor: pointer;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+  opacity: 0;
+  position: absolute;
+  background-color: #405B5C;
+  padding: 32px 10px;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#precedent {
+  left: 0;
+}
+
+#suivant {
+  right: 0;
+}
+
+.staff {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1em;
+}
+
+.staff .card {
+  width: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.staff .card img {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  width: 200px;
+}
+
+.staff .card img:hover {
+  -webkit-transform: scale(1.2, 1.2);
+          transform: scale(1.2, 1.2);
+}
+
+.staff .card h2 {
+  color: #263636;
+}
+
+.staff .card p {
+  font-size: large;
+}
+
+.map-displayer {
+  display: block !important;
+  height: 100%;
+  width: 80%;
+  min-width: 200px;
+  margin: 2em;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  border-radius: 8px;
+  -webkit-animation: floating-object 6s;
+          animation: floating-object 6s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.map-displayer:hover {
+  -webkit-animation: none;
+          animation: none;
+  -webkit-box-shadow: 0 0 16px #00000033;
+          box-shadow: 0 0 16px #00000033;
+  -webkit-transform: scale(1.01, 1.01);
+          transform: scale(1.01, 1.01);
+}
+
+@-webkit-keyframes floating-object {
+  0% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    -webkit-box-shadow: 0px 0px 3px #00000033;
+            box-shadow: 0px 0px 3px #00000033;
+  }
+  50% {
+    -webkit-transform: scale(1.01, 1.01);
+            transform: scale(1.01, 1.01);
+    -webkit-box-shadow: 0px 0px 16px #00000033;
+            box-shadow: 0px 0px 16px #00000033;
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    -webkit-box-shadow: 0px 0px 3px #00000033;
+            box-shadow: 0px 0px 3px #00000033;
+  }
+}
+
+@keyframes floating-object {
+  0% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    -webkit-box-shadow: 0px 0px 3px #00000033;
+            box-shadow: 0px 0px 3px #00000033;
+  }
+  50% {
+    -webkit-transform: scale(1.01, 1.01);
+            transform: scale(1.01, 1.01);
+    -webkit-box-shadow: 0px 0px 16px #00000033;
+            box-shadow: 0px 0px 16px #00000033;
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    -webkit-box-shadow: 0px 0px 3px #00000033;
+            box-shadow: 0px 0px 3px #00000033;
+  }
+}
+
+.rounded-corner {
+  border-radius: 16px;
+}
+
+.centered-text {
+  text-align: center;
+}
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,213 @@
+.presentation-element-contact {
+    display: flex;
+    justify-content: center;
+    gap: 10em;
+    flex-wrap: wrap;
+}
+
+.contents {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: grid;
+    grid-template-rows: 40px 1fr 40px;
+    grid-template-columns: 1fr;
+}
+
+.contents form {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    justify-self: stretch;
+}
+
+.contents form>.step {
+    position: absolute;
+    overflow-y: auto;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transition: left 0.5s;
+}
+
+.button-box {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+
+.button-box :is(button, input[type=submit]) {
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    color: #405B5C;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: small;
+    border: 2px solid #405B5C;
+    border-radius: 0.5em;
+}
+
+.button-box :is(button, input[type=submit]):hover {
+    background-color: #405B5C;
+    color: white;
+}
+
+
+
+.imgFil {
+    width: 150px;
+    height: 150px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.instruction {
+    text-align: center;
+    font-style: italic;
+    font-size: small;
+    font-weight: normal;
+}
+
+.form {
+    left: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.step-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 -1px 5px -1px #000;
+    position: relative;
+    background-color: white;    
+}
+
+.step-col {
+    flex-basis: 33%;
+    text-align: center;
+    position: relative;
+}
+ 
+#progress {
+    position: absolute;
+    height: 100%;
+    width: 33%;
+    background: #CCB400;
+    transition: left 0.7s;
+}
+
+.progressText {
+    font-size: small;
+    font-weight: bold;
+}
+
+.form-columns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: center;
+    padding: 3em;
+    box-sizing: content-box;
+    flex-grow: 1;
+}
+
+.form-columns > .column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 30%;
+    flex-grow: 1;
+}
+
+input, select, textarea {
+    padding: 0.7em 1em;
+    border-radius: 0.5em;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.formCard {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1em;
+}
+
+.formCard label {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#largeurImg {
+    transform: rotate(90deg);
+}
+
+.form3-columns {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1em;
+    align-items: center;
+    flex-grow: 1;
+    /* padding: 3em ; */
+    box-sizing: border-box;
+}
+
+.numTel {
+    flex-grow: 0 !important;
+}
+
+.grid-contact {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 3em;
+    grid-gap: 1em;
+    align-self: stretch;
+    justify-items: stretch;
+}
+
+.grid-contact input {
+    width: 100%;
+    margin: 1em 0em;
+}
+
+.text-contact {
+    grid-column: 2 / 4;
+    align-self: stretch;
+    justify-self: stretch;
+}
+
+.text-contact > textarea {
+    display: block;
+    width: 100%;
+}
+
+.grid-contact input, .grid-contact textarea {
+    box-sizing: border-box;
+}
+
+#popupContact > form {
+    height: 100%;
+    display : grid;
+    grid-template-rows: 1fr 40px;
+}

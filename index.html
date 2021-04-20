@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paul & Martin</title>
+
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="common.css">
+</head>
+<body onload="loadSlider()">
+
+    <header id="app-bar">
+        <div class="menu">
+            <h1 id="accueil" class="headerTitle" onclick="document.location = 'index.html'">ACCUEIL</h1>
+            <nav>
+                <ul>
+                    <li><a href="#presentation">PRESENTATION</a></li>
+                    <li><a href="#slider">GALERIE</a></li>
+                    <li><a href="#equipe">L'EQUIPE</a></li>
+                    <li><a href="#map">OU NOUS TROUVER</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="logo">
+            <img src="res/logos/logo.png" onclick="document.location = 'index.html'" alt="">
+        </div>
+        <div class="menu">
+            <h1 id="contact" class="headerTitle" onclick="document.location = 'contact.html'">CONTACT/DEVIS</h1>
+        </div>
+    </header>
+
+    <div class="contents">
+
+        <div class="element backgroundImage" id="presentation">
+             
+            <p class="centered-text presentation-text">
+                <strong>Choisir un écusson brodé</strong>, apprécier le contraste et la brillance des couleurs, la finesse du rendu,
+                la mise en valeur des détails, <strong>préférer un univers authentique.</strong><br>
+                <br>
+                Expérience, savoir-faire, réactivité : nous fabriquons des écussons sur mesure de grande qualité dans 
+                des <strong>délais courts</strong>, de 10 à 15 jours calendaires.<br>
+                <br>
+                Découvrez notre <strong>galerie d’écussons brodés.</strong>
+                De nombreux modèles sont encore à imaginer, dont le vôtre.
+            </p>
+
+        </div>
+
+        <div class="element loading-content noselect" id="slider">
+            <img src="res/images/slide-0.jpg" alt="images d'écussons" id="slider-element">
+            <div id="precedent" onclick="ChangeSlide(-1)">
+                <img src="res/fleches/flecheGauche.png" class="arrow">
+            </div>
+            <div id="suivant" onclick="ChangeSlide(1)">
+                <img src="res/fleches/flecheDroite.png" class="arrow">
+            </div>
+        </div>
+        
+        <div class="element" id="equipe">
+            <h1 class="title">L'équipe</h1>
+            <div class="content">
+                <div class="staff">
+                    <div class="card centered-text">
+                        <img src="res/images/elsa.svg" alt="profile picture">
+                        <h2>Elsa</h2>
+                        <p>
+                            Graphiste, elle travaille les images des 
+                            écussons et les transmet à l’atelier
+                        </p>
+                    </div>
+                    <div class="card centered-text">
+                        <img src="res/images/franck.svg" alt="profile picture">
+                        <h2>Franck</h2>
+                        <p>
+                            Comptable, il saisit les factures 
+                            et assure la comptabilité 
+                            quotidienne de la société
+                        </p>
+                    </div>
+                    <div class="card centered-text">
+                        <img src="res/images/lucas.svg" alt="profile picture">
+                        <h2>Lucas</h2>
+                        <p> Répond aux demandes des 
+                            clients par téléphone 
+                            et réalise des devis
+                        </p>
+                    </div>
+                    <div class="card centered-text">
+                        <img src="res/images/alice.svg" alt="profile picture">
+                        <h2>Alice</h2>
+                        <p> 
+                            S'occupe du suivi de vos commandes et se 
+                            charge des expéditions
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="element" id="map">
+            <h1 class="title">Où nous trouver</h1>
+                <iframe class="content map-displayer"  class="rounded-corner" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.60933904629!2d1.4568108836344211!3d43.593852901424086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebc8bec5ef4ef%3A0x23564fa5a01bf2c5!2s7%20Rue%20Guglielmo%20Marconi%2C%2031400%20Toulouse!5e0!3m2!1sfr!2sfr!4v1613772691090!5m2!1sfr!2sfr" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+
+    <div class="footer">
+        <footer>
+            <div class="footerCard">
+                <div class="footerTitle">
+                    <h3>Adresse</h3>
+                </div>
+                <div class="footerText">
+                    <p>
+                        7 rue Guglielmo Marconi <br>
+                         31400 TOULOUSE
+                    </p>
+                </div>
+            </div>
+            <div class="footerCard">
+                <div class="footerTitle">
+                    <h3>Contact</h3>
+                </div>
+                <div class="footerText">
+                    <p>
+                        <a href="mailto:contact@pauletmartin.fr">contact@pauletmartin.fr</a> 
+                        <br>
+                        <a href="tel:+339 75 47 06 42">Tel: 09 75 47 06 42</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footerCard">
+                <div class="footerTitle">
+                    <h3>Horaires</h3>
+                </div>
+                <div class="footerText">
+                    <p>
+                        09h00-17h00 <br>
+                        Du lundi au vendredi
+                    </p>
+                </div>
+            </div>
+            
+            <div class="copyright">©2021 by MadGeeks</div>
+        </footer> 
+    </div>
+</body>
+</html>

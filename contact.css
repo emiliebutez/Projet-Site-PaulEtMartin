@@ -1,0 +1,440 @@
+h2 {
+  text-align: center;
+}
+
+input, select, textarea {
+  padding: 0.7em 1em;
+  border-radius: 0.5em;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.presentation-element-contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10em;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.contact-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr auto 1fr;
+      grid-template-rows: 1fr auto 1fr;
+  min-height: 100vh;
+}
+
+.gridChoice {
+  width: 350px;
+  border-radius: 16px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 16px #00000033;
+          box-shadow: 0px 0px 16px #00000033;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute !important;
+      justify-content: space-around !important;
+}
+
+.gridChoice .cardChoice {
+  max-height: 400px;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+.gridChoice .cardChoice:hover {
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
+  cursor: pointer;
+}
+
+.gridChoice .cardChoice .divTitle {
+  text-align: center;
+}
+
+.gridChoice .cardChoice .icon {
+  width: 300px;
+  height: 200px;
+}
+
+.popup {
+  position: fixed;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 8px;
+  z-index: 10;
+  height: 60vh;
+  width: 60vw;
+  -webkit-box-shadow: 0 0 16px #00000033;
+          box-shadow: 0 0 16px #00000033;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+#dim {
+  position: fixed;
+  background-color: #00000033;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 8;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.scrollable {
+  overflow: auto;
+  height: 100%;
+}
+
+.contents {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 40px 1fr 40px;
+      grid-template-rows: 40px 1fr 40px;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+.contents form {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  -ms-grid-column-align: stretch;
+      justify-self: stretch;
+}
+
+.contents form > .step {
+  position: absolute;
+  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transition: left 0.5s;
+  transition: left 0.5s;
+}
+
+.button-box {
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1em;
+  padding: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.button-box :is(button, input[type=submit]) {
+  cursor: pointer;
+  background-color: white;
+  border: none;
+  color: #405B5C;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: small;
+  border: 2px solid #405B5C;
+  border-radius: 0.5em;
+}
+
+.button-box :is(button, input[type=submit]):hover {
+  background-color: #405B5C;
+  color: white;
+}
+
+.imgFil {
+  width: 150px;
+  height: 150px;
+}
+
+.instruction {
+  text-align: center;
+  font-style: italic;
+  font-size: small;
+  font-weight: normal;
+}
+
+.form {
+  left: 100%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.step-row {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 -1px 5px -1px #000;
+          box-shadow: 0 -1px 5px -1px #000;
+  position: relative;
+  background-color: white;
+}
+
+.step-col {
+  -ms-flex-preferred-size: 33%;
+      flex-basis: 33%;
+  text-align: center;
+  position: relative;
+}
+
+#progress {
+  position: absolute;
+  height: 100%;
+  width: 33%;
+  background: #CCB400;
+  -webkit-transition: left 0.7s;
+  transition: left 0.7s;
+}
+
+.progressText {
+  font-size: small;
+  font-weight: bold;
+}
+
+.form-columns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 2em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 3em;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.form-columns > .column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.formCard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  gap: 1em;
+}
+
+.formCard label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.formCard textarea {
+  margin: 3em;
+}
+
+#presenceImage {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+#largeurImg {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.form2-columns {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 4em;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.form2-columns h3 {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.type-fil {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.form3-columns {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  gap: 1em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  /* padding: 3em ; */
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.numTel {
+  -webkit-box-flex: 0 !important;
+      -ms-flex-positive: 0 !important;
+          flex-grow: 0 !important;
+}
+
+.grid-contact {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  padding: 3em;
+  grid-gap: 1em;
+  -ms-grid-row-align: stretch;
+      align-self: stretch;
+  justify-items: stretch;
+}
+
+.grid-contact input {
+  width: 100%;
+  margin: 1em 0em;
+}
+
+.text-contact {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-column: 2 / 4;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+  -ms-grid-column-align: stretch;
+      justify-self: stretch;
+}
+
+.text-contact > textarea {
+  display: block;
+  width: 100%;
+}
+
+.grid-contact input, .grid-contact textarea {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#popupContact > form {
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 40px;
+      grid-template-rows: 1fr 40px;
+}
+
+.contact {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+/*# sourceMappingURL=contact.css.map */

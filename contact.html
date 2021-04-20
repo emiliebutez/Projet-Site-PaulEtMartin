@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paul & Martin</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="common.css">
+    <script src="script.js"></script>
+</head>
+
+<body class="contact-container" onload="init()">
+    <header id="app-bar">
+        <div class="menu">
+            <h1 id="accueil" class="headerTitle" onclick="document.location = 'index.html'">ACCUEIL</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html#presentation">PRESENTATION</a></li>
+                    <li><a href="index.html#slider">GALERIE</a></li>
+                    <li><a href="index.html#equipe">L'EQUIPE</a></li>
+                    <li><a href="index.html#map">OU NOUS TROUVER</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="logo">
+            <img src="res/logos/logo.png" onclick="document.location = 'index.html'" alt="">
+        </div>
+        <div class="menu">
+            <h1 id="contact" class="headerTitle" onclick="document.location = 'contact.html'">CONTACT/DEVIS</h1>
+        </div>
+    </header>
+
+    <div class="presentation-element-contact">
+        <div class="gridChoice">
+            <div class="cardChoice" onclick="reveal('popupDevis')">
+                <div class="divImg">
+                    <img src="res/logos/devis.svg" alt="devis" class="icon"></a>
+                </div>
+                <div class="divTitle">
+                    <h2>Demander un devis</h2>
+                </div>
+            </div>
+        </div>
+        <div class="gridChoice">
+            <div class="cardChoice" onclick="reveal('popupContact')">
+                <div class="divImg">
+                    <img src="res/logos/letter.svg" alt="mail" class="icon">
+                </div>
+                <div class="divTitle">
+                    <h2>Nous contacter</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="dim" onclick="hideCurrent()"></div>
+
+    <div id="popupDevis" class="popup">
+        <div class="contents">
+            <div class="step-row">
+                <div id="progress"></div>
+                <div class="step-col">
+                    <p class="progressText">Informations personnelles</p>
+                </div>
+                <div class="step-col">
+                    <p class="progressText">Apparence des écussons</p>
+                </div>
+                <div class="step-col">
+                    <p class="progressText">Dimensions et quantité</p>
+                </div>
+            </div>
+            <form id="devis-form" action="mailto:contact@pauletmartin.fr?subject=Demande de devis" method="POST"  name="EmailForm" enctype="text/plain" accept-charset="utf-8">
+                <div id="Form1" class="step">
+                    <h2>
+                        Nous avons besoin d'informations sur vous
+                        <p class="instruction">Veuillez remplir toutes les informations annotées d'un *</p>
+                    </h2>
+                    
+                    <div class="form-columns">
+                        <div class="column">
+                            <label for="Nom">Nom: *</label>
+                            <input type="text" name="Nom" id="nom" pattern="[A-Za-z]+" placeholder="Ex: Dupont" required>
+                        </div>
+                        <div class="column">
+                            <label for="Prenom">Prénom: *</label>
+                            <input type="text" name="Prenom" id="prenom" pattern="[A-Za-z]+" placeholder="Ex: Jean" required>
+                        </div>
+                        <div class="column">
+                            <label for="Raison Sociale">Raison sociale:</label>
+                            <input type="text" name="Raison sociale" id="nomEn" class="dimformInputen" placeholder="Ex: Jean Dupont SA">
+                        </div>
+                        <div class="column">
+                            <label for="Categorie">Catégorie de l'organisation:</label>
+                            <select name="Categorie" id="categorie">
+                                <option value="" selected>Indéfini</option>
+                                <option value="textile">Textile</option>
+                                <option value="PubCommunication">Publicité Communication</option>
+                                <option value="ScourismeMJC">Scoutisme et MJC</option>
+                                <option value="sauveteurMer">Sauveteur en mer</option>
+                                <option valeur="servicesurgence">Services d'urgence</option>
+                                <option valeur="armePoliceGendarmerie">Arme, police, gendarmerie</option>
+                                <option valeur="sportsLoisirsTourisme">Sports, loisirs, tourisme</option>
+                                <option valeur="divers">Divers</option>
+                            </select>
+                        </div>
+
+                        <div class="column">
+                            <label for="Mail">Email: *</label>
+                            <input type="email" name="Mail" id="adresse" pattern="[a-z0-9]+[a-z0-9\.-_]*@[a-z0-9]+[a-z0-9\.-_].[a-z0-9]+" placeholder="Ex: jeandupont@hotmail.com" required>
+                        </div>
+
+                        <div class="column">
+                            <label for="Numero de telephone">Numéro de téléphone: *</label>
+                            <input type="tel" name="Numero de telephone" class="international-phone" id="numTem" pattern="\+33 [0-9]( [0-9]{2}){4}" maxlength="17" placeholder=" Ex: +33 7 89 79 87 98"  required>
+                        </div>
+
+                        <div class="column">
+                            <label for="Rue">Rue: *</label>
+                            <input type="text" name="rue" id="Rue" placeholder="Ex: 36 Avenue du Canal du Midi" required>
+                        </div>
+
+                        <div class="column">
+                            <label for="Ville">Ville: *</label>
+                            <input type="text" name="Ville" id="ville" placeholder="Ex: Toulouse" required>
+                        </div>
+
+                        <div class="column">
+                            <label for="Code postal">Code postal: *</label>
+                            <input type="text" name="Code postal" id="codePostal" placeholder="Ex: 31000" pattern="[0-9a-zA-z-\s]{3,}" maxlength="9" required>
+                        </div>
+                    </div>
+                </div>
+                <div id="Form2" class="step">
+                    <h2>
+                        Quelle apparence souhaitez-vous pour vos écussons ?
+                        <p class="instruction">
+                            Veuillez remplir toutes les informations annotées d'un *
+                            <br>
+                            Une description et/ou un fichier image de l'apparence de vos écussons doit être obligatoirement transmis.
+                        </p>
+                    </h2>
+                    <div class="form2-columns">
+                        <h3>Quel type de fil souhaitez-vous ?</h3>
+                        <div class="type-fil">
+                            <div class="formCard">
+                                <label for="Tissu" >
+                                    <img src="res/logos/tissu.svg" class="imgFil">
+                                    Fil en tissu
+                                    <input id="Tissu" type="radio" name="typeFil" value="tissu" checked>
+                                </label>
+                            </div>
+                            <div class="formCard">
+                                <label for="Metallique">
+                                    <img src="res/logos/metallic.svg" class="imgFil">
+                                    Fil métallique
+                                    <input id="Metallique" type="radio" name="typeFil" value="metalique">
+                                </label>
+                            </div>
+                            <div class="formCard">
+                                <label for="Brillant">
+                                    <img src="res/logos/brillant.svg" class="imgFil">
+                                    Fil brillant
+                                    <input id="Brillant" type="radio" name="typeFil" value="brillant">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="formCard">
+                            <label for="Presence d'une image">
+                                <h3>Souhaitez-vous nous transmettre un fichier image pour l'apparence de vos écussons ?
+                                    <p class="instruction">
+                                        Si vous souhaitez nous transmettre un fichier image vous devrez
+                                        <br> 
+                                        le joindre dans le mail avant de l'envoyer.
+                                    </p>
+                                </h3>
+                            </label>
+                            <select name="Presence d'une image" id="presenceImage" required>
+                                <option value="non" selected>Non</option>
+                                <option value="oui">Oui</option>
+                            </select>
+                        </div>
+                        <div class="formCard">
+                            <label for="Descrition"><h3>Et/ou pouvez-vous nous faire la description des écussons souhaitez</h3></label>
+                            <textarea name="Description" id="user-description" placeholder="Entrez votre description" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div id="Form3" class="step">
+                    <h2>
+                        Quelles dimensions souhaitez-vous pour vos écussons et combien en souhaitez-vous ?
+                        <p class="instruction">Veuillez remplir toutes les informations annotées d'un *</p>
+                    </h2>
+                    <div class="form3-columns">
+                        <div class="formCard">
+                            <label for="Largeur">Largeur en cm: *</label>
+                            <img src="res/logos/hauteur.svg" alt="" id="largeurImg">
+                            <input type="number" name="Largeur" id="largeur" placeholder="Ex: 2,5" step="0.1" min="0" required>
+                        </div>
+                        <div class="formCard">
+                            <label for="Hauteur">Hauteur en cm: *</label>
+                            <img src="res/logos/hauteur.svg" alt="">
+                            <input type="number" name="Hauteur" id="hauteur" placeholder="Ex: 3,5" step="0.1" min="0" required>
+                        </div>
+                        <div class="formCard">
+                            <label for="Quantite">Quantité: *</label>
+                            <img src="res/logos/qt.svg" alt="">
+                            <input type="number" name="Quantite" id="quantite" placeholder="Ex: 30" min="1" required>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="button-box">
+                <button type="button" id="back">Retour</button>
+                <button type="button" id="next">Suivant</button>
+                <input id="validate" form="devis-form" type="submit" value="Envoyer"" onclick="imageFile()">
+            </div>
+        </div>
+    </div>
+
+    <div id= "popupContact" class="popup">
+        <form  action="mailto:contact@pauletmartin.fr?subject=Contact" method="POST"  name="EmailForm" enctype="text/plain">
+            <div class="scrollable">
+                <h2>
+                    Vous désirez nous contacter ?
+                    <p class="instruction">
+                        Veuillez remplir toutes les informations annotées d'un *
+                        <br>
+                        Entrez l'adresse mail avec laquelle vous souhaitez être recontacté et entrez un numéro de téléphone si vous souhaitez être recontacté par téléphone
+                    </p>
+                </h2>
+                <div class="grid-contact">
+                    <div class="">
+                        <label for="Nom">Nom: *</label>
+                        <input type="text" name="Nom" id="nomContact" pattern="[A-Za-z]+" placeholder="Ex: Dupont" required>
+                    </div>
+                    <div class="">
+                        <label for="Prenom">Prénom: *</label>
+                        <input type="text" name="Prenom" id="prenomContact" pattern="[A-Za-z]+" placeholder="Ex: Jean" required>
+                    </div>
+                    <div class="">
+                        <label for="Email">Email: *</label>
+                        <input type="email" name="Email" id="adresseContact" pattern="[a-z0-9]+[a-z0-9\.-_]*@[a-z0-9]+[a-z0-9\.-_].[a-z0-9]+" placeholder="Ex: jeandupont@hotmail.com" required>
+                    </div>
+                    <div class="numTel">
+                        <label for="Numero de telephone">Numéro de téléphone: </label>
+                        <input type="tel" name="Numero de telephone" id="numTelContact" class="international-phone" pattern="\+33 [0-9]( [0-9]{2}){4}" placeholder=" Ex: +33 7 89 79 87 98" maxlength="17">
+                    </div>
+                    <div class="text-contact">
+                        <label for="Message">Message: *</label>
+                        <textarea name="Message" id="contact-message" placeholder="Ecrivez votre message" rows="10" required></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button-box">
+                <input type="submit" class="button-color" value="Envoyer">
+            </div>
+        </form>
+    </div>
+
+    <div class="footer contact">
+        <footer>
+            <div class="footerCard">
+                <div class="footerTitle">
+                    <h3>Adresse</h3>
+                </div>
+                <div class="footerText">
+                    <p>
+                        7 rue Guglielmo Marconi 
+                        <br> 
+                        31400 TOULOUSE
+                    </p>
+                </div>
+            </div>
+            <div class="footerCard">
+                <div class="footerTitle">
+                    <h3>Contact</h3>
+                </div>
+                <div class="footerText">
+                    <p>
+                        <a href="mailto:contact@pauletmartin.fr">contact@pauletmartin.fr</a>
+                        <br>
+                        <a href="tel:+339 75 47 06 42">Tel: 09 75 47 06 42</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footerCard">
+                <div class="footerTitle">
+                    <h3>Horaires</h3>
+                </div>
+                <div class="footerText">
+                    <p>
+                        09h00-17h00 <br> Du lundi au vendredi
+                    </p>
+                </div>
+            </div>
+
+            <div class="copyright">©2021 by MadGeeks</div>
+        </footer>
+    </div>
+</body>
+
+</html>
